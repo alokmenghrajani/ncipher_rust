@@ -1,0 +1,27 @@
+FROM ubuntu:20.10
+
+COPY CodeSafe-linux64-dev-12.50.2.iso /codesafe.iso
+RUN apt-get update -y && \
+    apt-get install -y xorriso && \
+    mkdir /codesafe && \
+    osirrox -indev /codesafe.iso -extract / /codesafe/ && \
+    cd / && \
+    tar xf /codesafe/linux/libc6_11/amd64/nfast/csd/agg.tar && \
+    tar xf /codesafe/linux/libc6_11/amd64/nfast/devref/agg.tar && \
+    tar xf /codesafe/linux/libc6_11/amd64/nfast/jcecsp/user.tar && \
+    tar xf /codesafe/linux/libc6_11/amd64/nfast/javasp/agg.tar && \
+    tar xf /codesafe/linux/libc6_11/amd64/nfast/hwsp/agg.tar && \
+    tar xf /codesafe/linux/libc6_11/amd64/nfast/ctls/agg.tar && \
+    tar xf /codesafe/linux/libc6_11/amd64/nfast/hwcrhk/gnupg.tar && \
+    tar xf /codesafe/linux/libc6_11/amd64/nfast/hwcrhk/user.tar && \
+    tar xf /codesafe/linux/libc6_11/amd64/nfast/jd/agg.tar && \
+    tar xf /codesafe/linux/libc6_11/amd64/nfast/nhfw/agg.tar && \
+    tar xf /codesafe/linux/libc6_11/amd64/nfast/ratls/agg.tar && \
+    tar xf /codesafe/linux/libc6_11/amd64/nfast/gccsrc/ppcdev.tar && \
+    tar xf /codesafe/linux/libc6_11/amd64/nfast/csd/agg.tar && \
+    tar xf /codesafe/linux/libc6_11/amd64/nfast/dsserv/user.tar && \
+    tar xf /codesafe/linux/libc6_11/amd64/nfast/snmp/agg.tar && \
+    tar xf /codesafe/linux/libc6_11/amd64/nfast/csdref/agg.tar && \
+    tar xf /codesafe/linux/libc6_11/amd64/nfast/pkcs11/user.tar && \
+    rm -fr /codesafe && \
+    rm codesafe.iso

@@ -1,0 +1,13 @@
+[package]
+name = "ncipher_rust"
+version = "0.1.0"
+
+[lib]
+name = "ncipher_rust"
+crate-type = ["staticlib"]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
