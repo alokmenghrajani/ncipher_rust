@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-int rust_function(void);
+int rust_function(int);
 
 int main(void) {
-  rust_function();
+  rust_function(10);
   return 0;
 }

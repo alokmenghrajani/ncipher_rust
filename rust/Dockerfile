@@ -12,4 +12,4 @@ SHELL ["/bin/bash", "-c"]
 RUN source $HOME/.cargo/env && \
     rustup default nightly && \
     rustup component add rust-src && \
-    cargo install xargo
+    rustup target add powerpc-unknown-linux-gnu
